@@ -69,6 +69,7 @@ Acorde al tipo de sistema operativo se recomienda instalar
    python odoo/odoo-bin -c odoo.conf --dev all
    ```
 8. Si no les da problemas y levanta el proyecto terminamos con la instalación podemos empezar a probar odoo 🚀😎.
+9. En un navegador colocar `http://localhost:8069` o en el puerto que configuraron en el **odoo.conf**
 
 > **NOTA:** En windows en caso de requerir instalar lo siguiente
 
