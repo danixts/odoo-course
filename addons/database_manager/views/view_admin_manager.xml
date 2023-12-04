@@ -1,0 +1,70 @@
+<odoo>
+    <data>
+        <record id="view_admin_manager_form" model="ir.ui.view">
+            <field name="name">view.admin.manager.form</field>
+            <field name="model">admin.database</field>
+            <field name="arch" type="xml">
+                <form string="Admin Database">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="instance"/>
+                            <field name="is_backup"/>
+                            <field name="type_software"/>
+                            <field name="server_id"/>
+                            <field name="type_environment"/>
+                            <field name="field_a"/>
+                            <field name="field_b"/>
+                            <field name="field_result" readonly="0"/>
+                        </group>
+                        <notebook>
+                            <page string="Frequency">
+                                <field name="frequency_ids"/>
+                            </page>
+                            <page string="Tables" id="table">
+                                <field name="table_ids">
+                                    <tree editable="1">
+                                        <field name="name"/>
+                                        <field name="field"/>
+                                        <field name="type"/>
+                                        <field name="description"/>
+                                        <field name="file_name" insivible="0"/>
+                                        <field name="file" filename="file_name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <!-- Chatter -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_admin_manager_tree" model="ir.ui.view">
+            <field name="name">view.admin.manager.tree</field>
+            <field name="model">admin.database</field>
+            <field name="arch" type="xml">
+                <tree string="Admin Database">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="instance"/>
+                    <field name="is_backup"/>
+                    <field name="type_software"/>
+                    <field name="server_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_admin_database" model="ir.actions.act_window">
+            <field name="name">Admin Database</field>
+            <field name="res_model">admin.database</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record id="view_blumbit_model_form" model="ir.ui.view">
+            <field name="name">view.blumbit.model.form</field>
+            <field name="model">blumbit.model</field>
+            <field name="arch" type="xml">
+                <form string="Blumbit Manager">
+                    <header>
+                        <!-- Post -->
+                        <button name="press_button" string="Print" class="oe_highlight"
+                                type="object" data-hotkey="v"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" placeholder="ej. name test"/>
+                            <field name="last_name" placeholder="ej. Alambrito" required="1" readonly="0"/>
+                            <field name="is_active"/>
+                            <field name="age" required="1"/>
+                            <field name="amount"/>
+                            <field name="blumbit_user_id" widget="many2many_tags">
+                                <!--                                <tree editable="1">-->
+                                <!--                                    <field name="first_name"/>-->
+                                <!--                                    <field name="last_name"/>-->
+                                <!--                                </tree>-->
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_blumbit_model_tree" model="ir.ui.view">
+            <field name="name">view.blumbit.model.tree</field>
+            <field name="model">blumbit.model</field>
+            <field name="arch" type="xml">
+                <tree string="Blumbit Manager">
+                    <field name="name"/>
+                    <field name="is_active"/>
+                    <field name="age"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_blumbit_model" model="ir.actions.act_window">
+            <field name="name">Blumbit Model</field>
+            <field name="res_model">blumbit.model</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

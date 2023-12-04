@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <menuitem id="menu_database_admin_root" name="Database Admin" sequence="0"
+                  groups="base.group_user"/>
+
+        <menuitem id="menu_database_admin_manager" parent="menu_database_admin_root" name="Database Manager"
+                  sequence="1"
+                  groups="base.group_user" action="action_view_admin_database"/>
+
+        <menuitem id="menu_database_admin_server" parent="menu_database_admin_root" name="Server" sequence="2"
+                  groups="base.group_user" action="action_view_admin_server"/>
+
+        <menuitem id="menu_database_admin_user" parent="menu_database_admin_server" name="User" sequence="3"
+                  groups="base.group_user" action="action_view_admin_user"/>
+    </data>
+</odoo>

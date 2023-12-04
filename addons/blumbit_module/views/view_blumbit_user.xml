@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+        <record id="view_blumbit_user_form" model="ir.ui.view">
+            <field name="name">view.blumbit.user.form</field>
+            <field name="model">blumbit.user</field>
+            <field name="arch" type="xml">
+                <form string="Blumbit User">
+                    <sheet>
+                        <group>
+                            <field name="image" widget="image" style="width: 120px"/>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="nit"/>
+                            <field name="status"/>
+                            <field name="birth_date"/>
+                            <field name="gen"/>
+                            <field name="comment"/>
+                            <field name="partner_id"/>
+                            <field name="currency_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Relations">
+                                <field name="rel_id">
+                                    <tree editable="1">
+                                        <field name="currency_id"/>
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_blumbit_user_tree" model="ir.ui.view">
+            <field name="name">view.blumbit.user.tree</field>
+            <field name="model">blumbit.user</field>
+            <field name="arch" type="xml">
+                <tree string="Blumbit User">
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="nit"/>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <field name="gen"/>
+                    <field name="partner_id"/>
+                    <field name="currency_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_blumbit_user" model="ir.actions.act_window">
+            <field name="name">Blumbit User</field>
+            <field name="res_model">blumbit.user</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

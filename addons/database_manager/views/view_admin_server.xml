@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record id="view_admin_server_form" model="ir.ui.view">
+            <field name="name">view_admin_server_form</field>
+            <field name="model">admin.server</field>
+            <field name="arch" type="xml">
+                <form string="Admin Server">
+                    <sheet>
+                        <group>
+                            <field name="ip"/>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_admin_server_tree" model="ir.ui.view">
+            <field name="name">view.admin.server.tree</field>
+            <field name="model">admin.server</field>
+            <field name="arch" type="xml">
+                <tree string="Admin Server">
+                    <field name="ip"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_admin_server" model="ir.actions.act_window">
+            <field name="name">Admin Server</field>
+            <field name="res_model">admin.server</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

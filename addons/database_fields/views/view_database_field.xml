@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="view_database_fields_manager_form" model="ir.ui.view">
+            <field name="name">view.database.fields.manager.form</field>
+            <field name="model">admin.database</field>
+            <field name="inherit_id" ref="database_manager.view_admin_manager_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//page[@id='table']" position="after">
+                    <page string="Account">
+                        <field name="account_id"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

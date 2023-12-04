@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record id="view_admin_user_form" model="ir.ui.view">
+            <field name="name">view.admin.user.form</field>
+            <field name="model">admin.user</field>
+            <field name="arch" type="xml">
+                <form string="Admin User">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="position"/>
+
+
+                        </group>
+
+                        <notebook>
+                            <page string="Databases">
+                                <field name="admin_database_ids"/>
+                            </page>
+                            <page string="Access">
+                                <field name="admin_access_ids">
+                                    <tree editable="1">
+                                        <field name="name"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_admin_user_tree" model="ir.ui.view">
+            <field name="name">view.admin.user.tree</field>
+            <field name="model">admin.user</field>
+            <field name="arch" type="xml">
+                <tree string="Admin User">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_admin_user" model="ir.actions.act_window">
+            <field name="name">Admin User</field>
+            <field name="res_model">admin.user</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

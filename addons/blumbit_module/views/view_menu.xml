@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <menuitem id="menu_blumbit" name="Blumbit Manager" sequence="0"
+                  groups="base.group_user" action="action_view_blumbit_model"/>
+
+        <menuitem id="menu_blumbit_user" parent="menu_blumbit" name="Blumbit User" sequence="0"
+                  groups="base.group_user" action="action_view_blumbit_user"/>
+    </data>
+</odoo>
